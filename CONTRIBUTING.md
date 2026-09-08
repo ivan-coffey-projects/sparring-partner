@@ -14,8 +14,8 @@ npm run dev
 
 Open `http://localhost:3000`. The seed creates local-only accounts:
 
-- Trainer: `coach@sparring.local` / `coach-demo-1`
-- Representative: `rep@sparring.local` / `rep-demo-1`
+- Trainer: `coach@1x.example` / `coach-demo-1`
+- Representative: `rep@1x.example` / `rep-demo-1`
 
 Set `SP_MOCK_LLM=1` in `.env` to run without provider credentials.
 

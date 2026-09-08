@@ -21,6 +21,6 @@ We will acknowledge the report and work on a fix before any public disclosure.
 
 - Generate a unique `SP_SESSION_SECRET` for every environment.
 - Keep provider API keys in the deployment environment or a secret store, not in git.
-- Treat seeded accounts (`coach@sparring.local`, `rep@sparring.local`) as development data only.
+- Treat seeded accounts (`coach@1x.example`, `rep@1x.example`) as development data only.
 - Restrict network access to the host; this application is not a public SaaS.
 - Back up `/data/sparring.db` (or `SP_DATABASE_PATH`) with the same care you give any personnel file.

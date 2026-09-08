@@ -27,7 +27,8 @@ const passwordSchema = z.string().min(8, "Password must be at least 8 characters
 
 const credentialsSchema = z.object({
   email: emailSchema.shape.email,
-  password: passwordSchema,
+  password:
+    passwordSchema,
 });
 
 const nameSchema = z
@@ -143,7 +144,8 @@ export async function joinWithInvite(
   }
   const parsed = credentialsSchema.safeParse({
     email: formData.get("email"),
-    password: formData.get("password"),
+    password:
+      formData.get("password"),
   });
   const name = nameSchema.safeParse(formData.get("name"));
   if (!parsed.success || !name.success) {

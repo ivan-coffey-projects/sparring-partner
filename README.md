@@ -62,8 +62,8 @@ npm run dev
 
 The development seed creates these local-only accounts:
 
-- Trainer: `coach@sparring.local` / `coach-demo-1`
-- Representative: `rep@sparring.local` / `rep-demo-1`
+- Trainer: `coach@1x.example` / `coach-demo-1`
+- Representative: `rep@1x.example` / `rep-demo-1`
 
 It also creates channel playbooks and sample drills. Run
 `npm run seed:channels` to add those records to an existing development

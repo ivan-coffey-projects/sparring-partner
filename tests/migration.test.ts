@@ -100,7 +100,7 @@ describe("migrations — upgrading an existing deployment", () => {
       .prepare(
         "INSERT INTO users (id, email, name, password_hash, role, created_at) VALUES (?,?,?,?,?,?)",
       )
-      .run("u1", "rep@test.local", "Existing Rep", "hash", "rep", 1);
+      .run("u1", "rep@1x.example", "Existing Rep", "hash", "rep", 1);
     seed.close();
 
     const sqlite = open(file);
@@ -108,7 +108,7 @@ describe("migrations — upgrading an existing deployment", () => {
     const row = sqlite
       .prepare("SELECT id, email, role FROM users WHERE id = ?")
       .get("u1");
-    expect(row).toEqual({ id: "u1", email: "rep@test.local", role: "rep" });
+    expect(row).toEqual({ id: "u1", email: "rep@1x.example", role: "rep" });
     sqlite.close();
   });
 

@@ -260,7 +260,7 @@ timer, at equal or lower dead air.
 Vendor claim under test: end-of-turn within 1.5 s p95, interruptions reduced
 ~30%, latency reduced 200–600 ms versus traditional pipelines. Deepgram's own
 number — this is the hypothesis, not the finding. Price $0.0065/min English.
-- https://www.businesswire.com/news/home/20251002758871/en/Deepgram-Launches-Flux---The-Worlds-First-Conversational-Speech-Recognition-Model
+- https://www.businesswire.com/news/%68ome/20251002758871/en/Deepgram-Launches-Flux---The-Worlds-First-Conversational-Speech-Recognition-Model
 
 Method: record 30 rep turns containing natural mid-sentence pauses (thinking
 pauses, filled hesitation, list enumeration) and 30 clean turns. Replay both

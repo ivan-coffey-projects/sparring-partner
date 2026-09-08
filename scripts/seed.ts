@@ -1,7 +1,7 @@
 /**
  * Seed a playable demo dataset:
- *  - trainer  coach@sparring.local / coach-demo-1
- *  - rep      rep@sparring.local   / rep-demo-1
+ *  - trainer  coach@1x.example / coach-demo-1
+ *  - rep      rep@1x.example   / rep-demo-1
  *  - "Reflective Discovery" methodology (numbered, citable entries)
  *  - a discovery-call scorecard mapped to those entries
  *  - Dana Whitfield — a prospect modeled on a deal being lost to inertia,
@@ -33,7 +33,7 @@ const now = Date.now();
 const existing = db
   .select({ id: users.id })
   .from(users)
-  .where(eq(users.email, "coach@sparring.local"))
+  .where(eq(users.email, "coach@1x.example"))
   .get();
 
 if (existing) {
@@ -52,7 +52,7 @@ db.insert(users)
   .values([
     {
       id: trainerId,
-      email: "coach@sparring.local",
+      email: "coach@1x.example",
       name: "Morgan Hale",
       passwordHash: hashPassword("coach-demo-1"),
       role: "trainer",
@@ -60,7 +60,7 @@ db.insert(users)
     },
     {
       id: repId,
-      email: "rep@sparring.local",
+      email: "rep@1x.example",
       name: "Jamie Torres",
       passwordHash: hashPassword("rep-demo-1"),
       role: "rep",
@@ -378,8 +378,8 @@ db.insert(drillAssignments)
   .run();
 
 console.log("Seeded demo data:");
-console.log("  trainer  coach@sparring.local / coach-demo-1");
-console.log("  rep      rep@sparring.local   / rep-demo-1");
+console.log("  trainer  coach@1x.example / coach-demo-1");
+console.log("  rep      rep@1x.example   / rep-demo-1");
 console.log(`  prospect Dana Whitfield (${prospectId})`);
 console.log(`  drill    Cold discovery: the guarded VP (${drillId})`);
 

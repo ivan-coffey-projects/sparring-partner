@@ -1,0 +1,37 @@
+services:
+  sparring-partner:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      SP_DATABASE_PATH: /data/sparring.db
+      SP_SESSION_SECRET: ${SP_SESSION_SECRET:?set SP_SESSION_SECRET in .env}
+      SP_MOCK_LLM: ${SP_MOCK_LLM:-0}
+      SP_PASSWORDLESS_LOGIN: ${SP_PASSWORDLESS_LOGIN:-0}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ELEVENLABS_API_KEY: ${ELEVENLABS_API_KEY:-}
+      SP_ELEVENLABS_BASE_URL: ${SP_ELEVENLABS_BASE_URL:-https://api.elevenlabs.io}
+      SP_ELEVENLABS_STT_MODEL: ${SP_ELEVENLABS_STT_MODEL:-scribe_v2_realtime}
+      SP_ELEVENLABS_TTS_MODEL: ${SP_ELEVENLABS_TTS_MODEL:-eleven_flash_v2_5}
+      SP_ELEVENLABS_VOICE_ID: ${SP_ELEVENLABS_VOICE_ID:-JBFqnCBsd6RMkjVDRZzb}
+      SP_PROSPECT_TTS_PROVIDER: ${SP_PROSPECT_TTS_PROVIDER:-kokoro}
+      SP_KOKORO_TTS_BASE_URL: ${SP_KOKORO_TTS_BASE_URL:-http://host.docker.internal:8880}
+      SP_KOKORO_TTS_MODEL: ${SP_KOKORO_TTS_MODEL:-kokoro}
+      SP_KOKORO_TTS_VOICE: ${SP_KOKORO_TTS_VOICE:-am_adam}
+      SP_OPENAI_COMPATIBLE_BASE_URL: ${SP_OPENAI_COMPATIBLE_BASE_URL:-}
+      SP_OPENAI_COMPATIBLE_API_KEY: ${SP_OPENAI_COMPATIBLE_API_KEY:-}
+      SP_PROSPECT_PROVIDER: ${SP_PROSPECT_PROVIDER:-openai}
+      SP_PROSPECT_MODEL: ${SP_PROSPECT_MODEL:-gpt-5.2-mini}
+      SP_ANALYZER_PROVIDER: ${SP_ANALYZER_PROVIDER:-openai}
+      SP_ANALYZER_MODEL: ${SP_ANALYZER_MODEL:-gpt-5.2-mini}
+      SP_GRADER_PROVIDER: ${SP_GRADER_PROVIDER:-openai}
+      SP_GRADER_MODEL: ${SP_GRADER_MODEL:-gpt-5.2}
+    volumes:
+      - sparring-data:/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+volumes:
+  sparring-data:

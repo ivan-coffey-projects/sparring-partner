@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/ivan-coffey-projects/sparring-partner/security/advisories/new
+    about: Report a vulnerability privately. Do not open a public issue.
+  - name: Documentation
+    url: https://github.com/ivan-coffey-projects/sparring-partner/blob/main/docs/README.md
+    about: Channel research notes and scoring rationale.

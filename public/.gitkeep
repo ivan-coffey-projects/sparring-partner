@@ -1,0 +1,4 @@
+# Keeps public/ present in a fresh clone. Git does not track empty
+# directories, and the Dockerfile's `COPY --from=builder /app/public` fails
+# outright when the directory is missing — which is every clean checkout
+# until something is actually served from here.

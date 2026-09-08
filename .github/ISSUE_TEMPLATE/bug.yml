@@ -1,0 +1,62 @@
+name: Bug report
+description: Something in the simulator, grader, or deployment does not work as documented.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Search existing issues first. For security
+        problems, use a [private advisory](https://github.com/ivan-coffey-projects/sparring-partner/security/advisories/new).
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What should have happened?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: What happened instead? Include error text if you have it.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start a call on the SMS channel
+        2. …
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Live call
+        - Written channel (SMS / email / DM)
+        - Grading / debrief
+        - Artifact review
+        - Trainer tools
+        - Auth / invites
+        - Deployment / Docker
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Release tag or commit SHA, if you know it.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I am running a self-hosted copy (not a live outreach tool).
+          required: true
+        - label: This report does not include provider API keys or session secrets.
+          required: true

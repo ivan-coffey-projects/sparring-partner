@@ -1,0 +1,80 @@
+{
+  "name": "sparring-partner",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Self-hosted sales-training simulator for live calls, SMS, email, and social DMs.",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivan-coffey-projects/sparring-partner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivan-coffey-projects/sparring-partner/issues"
+  },
+  "homepage": "https://github.com/ivan-coffey-projects/sparring-partner#readme",
+  "keywords": [
+    "sales-training",
+    "sales-enablement",
+    "coaching",
+    "simulation",
+    "self-hosted"
+  ],
+  "engines": {
+    "npm": ">=12"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "seed": "tsx scripts/seed.ts",
+    "seed:channels": "tsx scripts/seed-channels.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.39",
+    "@ai-sdk/openai": "^4.0.42",
+    "@ai-sdk/openai-compatible": "^3.0.31",
+    "@ai-sdk/react": "^4.0.69",
+    "@elevenlabs/client": "^1.21.0",
+    "ai": "^7.0.66",
+    "better-sqlite3": "^13.0.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.45.2",
+    "lucide-react": "^1.32.0",
+    "next": "16.3.1",
+    "next-themes": "^0.4.6",
+    "radix-ui": "^1.6.7",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1",
+    "shadcn": "^4.18.0",
+    "sonner": "^2.0.8",
+    "tailwind-merge": "^3.6.0",
+    "tw-animate-css": "^1.4.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.1",
+    "playwright": "^1.62.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.12",
+    "typescript": "^5",
+    "vitest": "^4.1.11"
+  },
+  "allowScripts": {
+    "better-sqlite3@13.0.3": true
+  }
+}

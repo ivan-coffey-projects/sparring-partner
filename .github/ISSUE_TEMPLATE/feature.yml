@@ -1,0 +1,41 @@
+name: Feature request
+description: A change to the simulator, grader, or trainer tools.
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is hard or missing today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should the product do instead?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Live call
+        - Written channel (SMS / email / DM)
+        - Grading / debrief
+        - Artifact review
+        - Trainer tools
+        - Auth / invites
+        - Deployment
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of scope
+      description: Optional. This product must never contact real leads.
+      placeholder: Not requesting live SMS, email sending, or CRM outbound.
